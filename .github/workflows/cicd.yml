@@ -19,9 +19,9 @@ jobs:
       run: |
         npm install
       # build and test the apps
-    - name: build
-      run: |
-        npm run build
+    # - name: build
+    #   run: |
+    #     npm run build
         
       
     - name: Build & push Docker image
