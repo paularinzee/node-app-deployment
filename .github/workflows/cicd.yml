@@ -28,7 +28,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: paularinze/node-app
-        tags: ${{ github.run_number }}
+        tags: build-${{ github.run_number }}
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
@@ -50,7 +50,7 @@ jobs:
           pwd
           cat deployment.yaml
           pwd
-          sed -i "s+paularinze/images.*+paularinze/images:app-$RUN_NUMBER+g" deployment.yaml
+          sed -i "s+paularinze/images.*+paularinze/node-app:build-$RUN_NUMBER+g" deployment.yaml
           cat deployment.yaml
           git add .
           git commit -m 'Done  by Github Actions   Job changemanifest: ${{ github.run_number }}'
