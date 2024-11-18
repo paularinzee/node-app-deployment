@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@v4
         name: changing the deployment of git repo
         with:
-          repository: 'paularinzee/kube_manifest'
+          repository: 'paularinzee/node-manifest'
           token: ${{ secrets.GIT_PASSWORD }}
       - name: modify the image
         run: |
